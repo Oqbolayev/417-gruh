@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Креативная кнопка</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .creative-button {
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(45deg, #ff007f, #ff8c00);
+      border: 2px solid transparent;
+      border-radius: 50px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .creative-button::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300%;
+      height: 300%;
+      background: white;
+      transition: all 0.3s ease;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+
+    .creative-button:hover {
+      background: linear-gradient(45deg, #ff8c00, #ff007f);
+      border-color: #ff007f;
+    }
+
+    .creative-button:hover::before {
+      opacity: 0.3;
+      transform: translate(-50%, -50%) scale(0);
+    }
+
+    .creative-button:focus {
+      outline: none;
+      box-shadow: 0 0 15px rgba(255, 0, 127, 0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <button class="creative-button">Привет</button>
+
+</body>
+</html>
